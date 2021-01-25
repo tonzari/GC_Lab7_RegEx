@@ -12,11 +12,14 @@ namespace GC_Lab7_RegEx
         // Write a method that will validate emails. An email should be in the following format: {comb of alphanumeric chars, with a length between 5 and 30, and there are no special chars}@{comb of alpnum chars, with a length between 5 and 10, and there are no special chars}.{domain can be a comb of alphnum chars with a length of two or three}
         // Write a method that will validate phone numbers. A phone # should be in the format: {area code of 3 dig}-{3dig}-{4dig}
         // Write a method that will validate date based on the following formt: (dd/mm/yyyy)
+        // EX
+        // Write a method that validates HTML elements
 
         // NAME
         // EMAIL
         // PHONE #
         // DATE
+        // EX: HTML ELEMENTS
 
         static void Main(string[] args)
         {
