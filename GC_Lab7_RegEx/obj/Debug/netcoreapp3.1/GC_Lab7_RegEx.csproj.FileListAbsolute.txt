@@ -1,0 +1,13 @@
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\bin\Debug\netcoreapp3.1\GC_Lab7_RegEx.exe
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\bin\Debug\netcoreapp3.1\GC_Lab7_RegEx.deps.json
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\bin\Debug\netcoreapp3.1\GC_Lab7_RegEx.runtimeconfig.json
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\bin\Debug\netcoreapp3.1\GC_Lab7_RegEx.runtimeconfig.dev.json
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\bin\Debug\netcoreapp3.1\GC_Lab7_RegEx.dll
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\bin\Debug\netcoreapp3.1\GC_Lab7_RegEx.pdb
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\obj\Debug\netcoreapp3.1\GC_Lab7_RegEx.csprojAssemblyReference.cache
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\obj\Debug\netcoreapp3.1\GC_Lab7_RegEx.AssemblyInfoInputs.cache
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\obj\Debug\netcoreapp3.1\GC_Lab7_RegEx.AssemblyInfo.cs
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\obj\Debug\netcoreapp3.1\GC_Lab7_RegEx.csproj.CoreCompileInputs.cache
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\obj\Debug\netcoreapp3.1\GC_Lab7_RegEx.dll
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\obj\Debug\netcoreapp3.1\GC_Lab7_RegEx.pdb
+C:\Users\dude_dude\source\repos\GC_Lab7_RegEx\GC_Lab7_RegEx\obj\Debug\netcoreapp3.1\GC_Lab7_RegEx.genruntimeconfig.cache

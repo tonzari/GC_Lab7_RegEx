@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace GC_Lab7_RegEx
 {
@@ -15,15 +17,34 @@ namespace GC_Lab7_RegEx
         // EX
         // Write a method that validates HTML elements
 
-        // NAME
-        // EMAIL
-        // PHONE #
-        // DATE
-        // EX: HTML ELEMENTS
+        // O  NAME
+        // O  EMAIL
+        // X  PHONE #
+        // O  DATE
+        // O  EX: HTML ELEMENTS
+
+        public static List<string> phoneTestNumbers= new List<string>
+            {
+                "234-44-2434",
+                "1231231234",
+                "555-555-1234",
+                "3333-333-1231",
+                "(249)230-1111"
+            };
 
         static void Main(string[] args)
         {
-            
+            foreach (var testNumber in phoneTestNumbers)
+            {
+                Console.WriteLine(IsValidPhoneNumber(testNumber));
+            }
+        }
+
+        public static bool IsValidPhoneNumber(string phoneNumber)
+        {
+            string phonePattern = @"^\d\d\d-\d\d\d-\d\d\d\d$";
+
+            return Regex.IsMatch(phoneNumber, phonePattern);
         }
     }
 }
