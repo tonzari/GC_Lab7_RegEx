@@ -9,30 +9,75 @@ namespace GC_Lab7_RegEx
         // GC Lab 7 Regular Expressions
         // Antonio Manzari
 
-        // TODO
-        // Write a method that will validate names. Names can only have alphabets, they should start with a capital letter, and they have a max length of 30. (but what about people with SUPER LONG names?)
-        // Write a method that will validate emails. An email should be in the following format: {comb of alphanumeric chars, with a length between 5 and 30, and there are no special chars}@{comb of alpnum chars, with a length between 5 and 10, and there are no special chars}.{domain can be a comb of alphnum chars with a length of two or three}
-        // Write a method that will validate phone numbers. A phone # should be in the format: {area code of 3 dig}-{3dig}-{4dig}
-        // Write a method that will validate date based on the following formt: (dd/mm/yyyy)
-        // EXTRA
-        // Write a method that validates HTML elements
-
-        // O  NAME
-        // O  EMAIL
-        // X  PHONE #
-        // O  DATE
-        // O  EX: HTML ELEMENTS
-
-        
         static void Main(string[] args)
         {
-            //RunTestIsValidPhoneNum();
-            //RunTestIsValidEmail();
+            Console.WriteLine("Please enter a valid name: ");
 
+            if (IsValidName(Console.ReadLine()))
+            {
+                Console.WriteLine($"Nice name ya got there. It's valid.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid name! Oh well. Let's move on.");
+            }
+
+            Console.WriteLine(Environment.NewLine);
+
+            Console.WriteLine("Please enter a valid email: ");
+
+            if (IsValidEmail(Console.ReadLine()))
+            {
+                Console.WriteLine($"Nice email ya got there. It's valid.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid email! Bummer. Let's move on.");
+            }
+
+            Console.WriteLine(Environment.NewLine);
+
+            Console.WriteLine("Please enter a valid phone number: ");
+
+            if (IsValidPhoneNumber(Console.ReadLine()))
+            {
+                Console.WriteLine($"Nice number ya got there. It's valid.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid phone number! Sad. Let's move on.");
+            }
+
+            Console.WriteLine(Environment.NewLine);
+
+            Console.WriteLine("Please enter a valid date: ");
+
+            if (IsValidDate(Console.ReadLine()))
+            {
+                Console.WriteLine($"Nice date ya got there. It's valid.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid date! This isn't going well. Let's just quit.");
+            }
         }
 
         #region METHODS
        
+        public static bool IsValidName(string userName)
+        {
+            // This was very challenging to allow for multiple names, hyphens, apostrophes, etc.
+            // I think namePattern4 is the closest to what the assignment literally asks for, which doesn't mention including a first AND last name.
+
+            string namePattern = @"^[A-Z]+[a-zA-Z]+(?:(?:\. |[' -])[a-zA-Z]+)*$";               // This didn't like the first name L'oreal. Hmm. 
+            string namePattern2 = @"^[A-Z]+[A-Za-z\'\s\.\,]+$";                                       // Doesn't like hyphenated last name.
+            string namePattern3 = @"^[A-Z]+[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*";    // Doesn't like the first name Su.
+            string namePattern4 = @"^[A-Z]+[A-z]{1,29}$";                                       // For the assignment, this handles a single name, under 30 chars
+
+            return Regex.IsMatch(userName, namePattern2);
+
+        }
+
         public static bool IsValidPhoneNumber(string userPhoneNumber)
         {
             string phonePattern = @"^\d{3}-\d{3}-\d{4}$";
@@ -42,15 +87,76 @@ namespace GC_Lab7_RegEx
 
         public static bool IsValidEmail(string userEmail)
         {
-            //TODO dont allow special characters?
             string emailPattern = @"^[A-z0-9]{5,30}[@][A-z0-9]{5,10}[.][A-z]{2,3}$";
 
             return Regex.IsMatch(userEmail, emailPattern) ;
         }
 
+        public static bool IsValidDate(string userDate)
+        {
+            string datePattern = @"^\d{1,2}/\d{1,2}/\d{4}$";
+
+            return Regex.IsMatch(userDate, datePattern);
+        }
+
         #endregion
 
         #region TESTS
+
+        private static void RunTestIsValidDate()
+        {
+            List<string> dateTestList = new List<string>
+            {
+                "aa/aa/aaaa",
+                "99/99/9999",
+                "12/12/1212",
+                "00/00/0000",
+                "12.12.1231",
+                "30/30/1922"
+            };
+
+            foreach (var date in dateTestList)
+            {
+                Console.WriteLine($"{date}: {IsValidDate(date)}");
+            }
+        }
+
+        private static void RunTestIsValidName()
+        {
+            List<string> nameTestList = new List<string>
+            {
+                "Antonio Manzari",
+                "Timmy McDougle",
+                "Bryan O'doodle",
+                "Su Hyn",
+                "Mariana Isabela Garcia-Hernandez",
+                "Dao D'sani",
+                "Aubertis Contigus",
+                "David Rothmobble Jr.",
+                "Hank Hill",
+                "L'oreal Divine",
+                "bobby",
+                "Hammond",
+                "'asdj",
+                "Anmm Ak8",
+                "Mansndsnsdj Mansdj nsdjsjsjs",
+                "23493",
+                "anto@mker.com",
+                "Big boy!!!",
+                "A! A!",
+                "Jammy",
+                "jammy",
+                "Hoksfosfoksfdoksfdoksodfkoskfoskdfoskdfosdofsdfdfsdfsdfsfsfsdfsdfsdf",
+                "HAndk33",
+                "Hank",
+                "David"
+            };
+
+            foreach (var name in nameTestList)
+            {
+                Console.WriteLine($"{name}: {IsValidName(name)}");
+            }
+        }
         
         private static void RunTestIsValidPhoneNum()
         {
