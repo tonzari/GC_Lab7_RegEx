@@ -24,9 +24,10 @@ namespace GC_Lab7_RegEx
         // O  EX: HTML ELEMENTS
 
         
-;        static void Main(string[] args)
+        static void Main(string[] args)
         {
             //RunTestIsValidPhoneNum();
+            //RunTestIsValidEmail();
 
         }
 
@@ -53,7 +54,7 @@ namespace GC_Lab7_RegEx
         
         private static void RunTestIsValidPhoneNum()
         {
-            List<string> phoneTestNumbers = new List<string>
+            List<string> phoneTestList = new List<string>
             {
                 "234-44-2434",
                 "1231231234",
@@ -62,9 +63,29 @@ namespace GC_Lab7_RegEx
                 "(249)230-1111"
             };
 
-            foreach (var testNumber in phoneTestNumbers)
+            foreach (var testNumber in phoneTestList)
             {
                 Console.WriteLine(IsValidPhoneNumber(testNumber));
+            }
+        }
+
+        private static void RunTestIsValidEmail()
+        {
+            List<string> emailTestList = new List<string>
+            {
+                "antonio@gmail.com",
+                "!!sdfjsdfjsdf@gmail.com",
+                "923492394@gmail.com",
+                "a@gmail.com",
+                "masdmamad@s.com",
+                "pringles@pringles.pringles",
+                "p@p.p",
+                "jasdj#@pants.net"
+            };
+
+            foreach (var email in emailTestList)
+            {
+                Console.WriteLine($"{email}: {IsValidEmail(email)}");
             }
         }
        
